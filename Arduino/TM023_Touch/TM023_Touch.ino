@@ -69,11 +69,11 @@ absData_t touchData;
 // setup() gets called once at power-up, sets up serial debug output and Cirque's Pinnacle ASIC.
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   while(!Serial); // Wait for USB serial port to enumerate
   Serial.println("X\tY\tZ\tButtons");
 
-  pinMode(LED_0, OUTPUT);
+  //pinMode(LED_0, OUTPUT);
   
   Pinnacle_Init();
 }
@@ -103,6 +103,8 @@ void loop()
     
   }
   AssertSensorLED(touchData.touchDown);
+
+  
 }
 
 /*  Pinnacle-based TM040040 Functions  */
@@ -314,7 +316,7 @@ void DeAssert_CS()
 
 void AssertSensorLED(bool state)
 {
-  digitalWrite(LED_0, !state);
+  //digitalWrite(LED_0, !state);
 }
 
 bool DR_Asserted()
